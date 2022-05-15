@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 #nullable disable
 
@@ -13,7 +14,7 @@ namespace shopApp_BackEnd.Models
             CustomerCarts = new HashSet<CustomerCart>();
             Orders = new HashSet<Order>();
         }
-
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public string UserId { get; set; }
         public string FullName { get; set; }
         public int Balance { get; set; }

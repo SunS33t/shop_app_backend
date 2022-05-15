@@ -22,16 +22,18 @@ namespace shopApp_BackEnd.Controllers
 
         // GET: api/Products
         [HttpGet]
+        [DisableRequestSizeLimit]
         public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
         {
-            return await _context.Products.ToListAsync();
+            return await _context.Products.Include(x=> x.ColorLists).ToListAsync();
         }
 
         // GET: api/Products/5
         [HttpGet("{id}")]
+        [DisableRequestSizeLimit]
         public async Task<ActionResult<Product>> GetProduct(string id)
         {
-            var product = await _context.Products.FindAsync(id);
+            var product = await _context.Products.Include(x => x.ColorLists).FirstOrDefaultAsync(x => x.ProductId == id);
 
             if (product == null)
             {
@@ -44,6 +46,7 @@ namespace shopApp_BackEnd.Controllers
         // PUT: api/Products/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
+        [DisableRequestSizeLimit]
         public async Task<IActionResult> PutProduct(string id, Product product)
         {
             if (id != product.ProductId)
@@ -75,6 +78,7 @@ namespace shopApp_BackEnd.Controllers
         // POST: api/Products
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
+        [DisableRequestSizeLimit]
         public async Task<ActionResult<Product>> PostProduct(Product product)
         {
             _context.Products.Add(product);

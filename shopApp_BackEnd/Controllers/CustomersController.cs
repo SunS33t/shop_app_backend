@@ -24,14 +24,14 @@ namespace shopApp_BackEnd.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Customer>>> GetCustomers()
         {
-            return await _context.Customers.ToListAsync();
+            return await _context.Customers.Include(x=>x.CustomerCarts).ToListAsync();
         }
 
         // GET: api/Customers/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Customer>> GetCustomer(string id)
         {
-            var customer = await _context.Customers.FindAsync(id);
+            var customer = await _context.Customers.Include(x=>x.CustomerCarts).FirstOrDefaultAsync(x=> x.UserId == id);
 
             if (customer == null)
             {
@@ -44,6 +44,7 @@ namespace shopApp_BackEnd.Controllers
         // PUT: api/Customers/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
+        [DisableRequestSizeLimit]
         public async Task<IActionResult> PutCustomer(string id, Customer customer)
         {
             if (id != customer.UserId)

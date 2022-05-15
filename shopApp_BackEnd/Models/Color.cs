@@ -14,6 +14,7 @@ namespace shopApp_BackEnd.Models
 
         public string ColorCode { get; set; }
         public string ColorName { get; set; }
+        public string ColorHex { get; set; }
 
         public virtual ICollection<ColorList> ColorLists { get; set; }
     }

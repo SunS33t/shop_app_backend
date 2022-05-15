@@ -28,10 +28,10 @@ namespace shopApp_BackEnd.Controllers
         }
 
         // GET: api/CustomerCarts/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<CustomerCart>> GetCustomerCart(string id)
+        [HttpGet("{u_id,p_id}")]
+        public async Task<ActionResult<CustomerCart>> GetCustomerCart(string u_id, string p_id)
         {
-            var customerCart = await _context.CustomerCarts.FindAsync(id);
+            var customerCart = await _context.CustomerCarts.FindAsync(u_id,p_id);
 
             if (customerCart == null)
             {
@@ -98,10 +98,10 @@ namespace shopApp_BackEnd.Controllers
         }
 
         // DELETE: api/CustomerCarts/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteCustomerCart(string id)
+        [HttpDelete("{u_id,p_id}")]
+        public async Task<IActionResult> DeleteCustomerCart(string u_id, string p_id)
         {
-            var customerCart = await _context.CustomerCarts.FindAsync(id);
+            var customerCart = await _context.CustomerCarts.FindAsync(u_id, p_id);
             if (customerCart == null)
             {
                 return NotFound();

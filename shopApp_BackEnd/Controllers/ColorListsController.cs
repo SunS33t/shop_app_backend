@@ -98,16 +98,16 @@ namespace shopApp_BackEnd.Controllers
         }
 
         // DELETE: api/ColorLists/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteColorList(string id)
+        [HttpDelete("{p_id}")]
+        public async Task<IActionResult> DeleteAllProductColor(string p_id)
         {
-            var colorList = await _context.ColorLists.FindAsync(id);
+            var colorList = await _context.ColorLists.Where(x=>x.ProductId == p_id).ToListAsync();
             if (colorList == null)
             {
                 return NotFound();
             }
-
-            _context.ColorLists.Remove(colorList);
+            colorList.ForEach(x => _context.ColorLists.Remove(x));
+            
             await _context.SaveChangesAsync();
 
             return NoContent();

@@ -27,6 +27,12 @@ namespace shopApp_BackEnd.Controllers
             return await _context.Comments.ToListAsync();
         }
 
+        [HttpGet("prod={id}")]
+        public async Task<ActionResult<IEnumerable<Comment>>> GetProductComments(string id)
+        {
+            return await _context.Comments.Where(x=>x.ProductId == id).ToListAsync();
+        }
+
         // GET: api/Comments/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Comment>> GetComment(string id)

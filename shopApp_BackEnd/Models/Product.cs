@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 #nullable disable
 
@@ -24,6 +25,7 @@ namespace shopApp_BackEnd.Models
         public string Description { get; set; }
         public int? Weight { get; set; }
         public string Difficulty { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public string ProductId { get; set; }
         public string ManufacturerId { get; set; }
 

@@ -22,6 +22,7 @@ namespace shopApp_BackEnd.Controllers
 
         // GET: api/Manufacturers
         [HttpGet]
+        [DisableRequestSizeLimit]
         public async Task<ActionResult<IEnumerable<Manufacturer>>> GetManufacturers()
         {
             return await _context.Manufacturers.ToListAsync();
@@ -29,6 +30,7 @@ namespace shopApp_BackEnd.Controllers
 
         // GET: api/Manufacturers/5
         [HttpGet("{id}")]
+        [DisableRequestSizeLimit]
         public async Task<ActionResult<Manufacturer>> GetManufacturer(string id)
         {
             var manufacturer = await _context.Manufacturers.FindAsync(id);
@@ -44,6 +46,7 @@ namespace shopApp_BackEnd.Controllers
         // PUT: api/Manufacturers/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
+        [DisableRequestSizeLimit]
         public async Task<IActionResult> PutManufacturer(string id, Manufacturer manufacturer)
         {
             if (id != manufacturer.ManufacturerId)
@@ -75,6 +78,7 @@ namespace shopApp_BackEnd.Controllers
         // POST: api/Manufacturers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
+        [DisableRequestSizeLimit]
         public async Task<ActionResult<Manufacturer>> PostManufacturer(Manufacturer manufacturer)
         {
             _context.Manufacturers.Add(manufacturer);

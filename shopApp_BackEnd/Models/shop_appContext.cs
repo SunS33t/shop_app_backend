@@ -16,7 +16,6 @@ namespace shopApp_BackEnd.Models
         {
         }
 
-        public virtual DbSet<Admin> Admins { get; set; }
         public virtual DbSet<Adress> Adresses { get; set; }
         public virtual DbSet<BankAccount> BankAccounts { get; set; }
         public virtual DbSet<Color> Colors { get; set; }
@@ -43,23 +42,6 @@ namespace shopApp_BackEnd.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Admin>(entity =>
-            {
-                entity.HasKey(e => e.UserId)
-                    .HasName("XPKAdmin");
-
-                entity.ToTable("Admin");
-
-                entity.Property(e => e.UserId)
-                    .HasMaxLength(30)
-                    .IsUnicode(false)
-                    .HasColumnName("User_ID");
-
-                entity.HasOne(d => d.User)
-                    .WithOne(p => p.Admin)
-                    .HasForeignKey<Admin>(d => d.UserId)
-                    .HasConstraintName("is_a");
-            });
 
             modelBuilder.Entity<Adress>(entity =>
             {
@@ -107,12 +89,16 @@ namespace shopApp_BackEnd.Models
                 entity.ToTable("Color");
 
                 entity.Property(e => e.ColorCode)
-                    .HasMaxLength(20)
+                    .HasMaxLength(50)
                     .IsUnicode(false);
 
                 entity.Property(e => e.ColorName)
                     .IsRequired()
                     .HasMaxLength(40)
+                    .IsUnicode(false);
+                entity.Property(e => e.ColorHex)
+                    .IsRequired()
+                    .HasMaxLength(10)
                     .IsUnicode(false);
             });
 
@@ -124,7 +110,7 @@ namespace shopApp_BackEnd.Models
                 entity.ToTable("ColorList");
 
                 entity.Property(e => e.ProductId)
-                    .HasMaxLength(20)
+                    .HasMaxLength(50)
                     .IsUnicode(false)
                     .HasColumnName("Product_ID");
 
@@ -191,7 +177,8 @@ namespace shopApp_BackEnd.Models
                 entity.Property(e => e.UserId)
                     .HasMaxLength(30)
                     .IsUnicode(false)
-                    .HasColumnName("User_ID");
+                    .HasColumnName("User_ID")
+                    .ValueGeneratedNever();
 
                 entity.Property(e => e.FullName)
                     .IsRequired()
@@ -219,7 +206,8 @@ namespace shopApp_BackEnd.Models
                 entity.Property(e => e.ProductId)
                     .HasMaxLength(20)
                     .IsUnicode(false)
-                    .HasColumnName("Product_ID");
+                    .HasColumnName("Product_ID")
+                    .ValueGeneratedNever();
 
                 entity.HasOne(d => d.Product)
                     .WithMany(p => p.CustomerCarts)
@@ -239,7 +227,7 @@ namespace shopApp_BackEnd.Models
                 entity.ToTable("Manufacturer");
 
                 entity.Property(e => e.ManufacturerId)
-                    .HasMaxLength(20)
+                    .HasMaxLength(50)
                     .IsUnicode(false)
                     .HasColumnName("Manufacturer_ID");
 
@@ -351,7 +339,7 @@ namespace shopApp_BackEnd.Models
                 entity.ToTable("Product");
 
                 entity.Property(e => e.ProductId)
-                    .HasMaxLength(20)
+                    .HasMaxLength(50)
                     .IsUnicode(false)
                     .HasColumnName("Product_ID");
 
@@ -372,7 +360,7 @@ namespace shopApp_BackEnd.Models
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.Property(e => e.Picture).HasMaxLength(1);
+                entity.Property(e => e.Picture);
 
                 entity.Property(e => e.Size)
                     .HasMaxLength(20)
