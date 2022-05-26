@@ -144,3 +144,4 @@ C:\Users\denis\source\repos\shopApp_BackEnd\shopApp_BackEnd\obj\Debug\net5.0\sho
 C:\Users\denis\source\repos\shopApp_BackEnd\shopApp_BackEnd\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\denis\source\repos\shopApp_BackEnd\shopApp_BackEnd\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\denis\source\repos\shopApp_BackEnd\shopApp_BackEnd\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\denis\source\repos\shopApp_BackEnd\shopApp_BackEnd\obj\Debug\net5.0\shopApp_BackEnd.csproj.CopyComplete

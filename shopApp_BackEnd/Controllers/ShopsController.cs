@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using shopApp_BackEnd.Models;
@@ -24,7 +22,7 @@ namespace shopApp_BackEnd.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Shop>>> GetShops()
         {
-            return await _context.Shops.ToListAsync();
+            return await _context.Shops.Include(x => x.ProductLists).Include(x=> x.Adress).ToListAsync();
         }
 
         // GET: api/Shops/5

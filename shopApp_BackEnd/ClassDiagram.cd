@@ -1,0 +1,343 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="shopApp_BackEnd.Models.Adress">
+    <Position X="3.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAIAAAAAAAIEAAAAAAAAAAAAAAAAAYAAAAAIAA=</HashCode>
+      <FileName>Models\Adress.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="shopApp_BackEnd.Models.BankAccount">
+    <Position X="11" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAgAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Models\BankAccount.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="shopApp_BackEnd.Models.Color">
+    <Position X="10.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAQAAAAAEAAAAACAAAAAAA=</HashCode>
+      <FileName>Models\Color.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="shopApp_BackEnd.Models.ColorList">
+    <Position X="7.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAACAAAAAABAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ColorList.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ColorCodeNavigation" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="shopApp_BackEnd.Models.Comment">
+    <Position X="6.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAADAAAABAAAAAAAAAAAAAgAAAAAAAAgAACCAAAAAAA=</HashCode>
+      <FileName>Models\Comment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="shopApp_BackEnd.Models.Customer">
+    <Position X="6" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEBAAEAACAAAIAAAAgAAAgAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Models\Customer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="User" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Orders" />
+      <Property Name="CustomerCarts" />
+      <Property Name="Comments" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="shopApp_BackEnd.Models.CustomerCart">
+    <Position X="8.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAADAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\CustomerCart.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Product" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="shopApp_BackEnd.Models.Manufacturer">
+    <Position X="8.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAMAAABAAAAAAAAAAAQ=</HashCode>
+      <FileName>Models\Manufacturer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Products" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="shopApp_BackEnd.Models.OpeningHour">
+    <Position X="1.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAgAIAAAAAACAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Models\OpeningHour.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="shopApp_BackEnd.Models.Order">
+    <Position X="4.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAABAAAEAAAAAAAAAAAAAAgAAAgAAAAAAAQAIAAAAAA=</HashCode>
+      <FileName>Models\Order.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="OrderLists" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="shopApp_BackEnd.Models.OrderList">
+    <Position X="5.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAECAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\OrderList.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Product" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="shopApp_BackEnd.Models.Product">
+    <Position X="10.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAgAgAEAAAAggQAAAAAAABQAACEAAEAAAQAAIAAAIAA=</HashCode>
+      <FileName>Models\Product.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Comments" />
+      <Property Name="ColorLists" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="shopApp_BackEnd.Models.ProductList">
+    <Position X="2.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>UAACAAAAAAAAAAAABAAAAAQAAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ProductList.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Product" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="shopApp_BackEnd.Models.Shop">
+    <Position X="2.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAQAAAAAAkAAgAAAAQAAAAAAAA=</HashCode>
+      <FileName>Models\Shop.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Adress" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="ProductLists" />
+      <Property Name="OpeningHours" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="shopApp_BackEnd.Models.shop_appContext">
+    <Position X="13.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAACEAAQAQAAAAEAAQAAAAEAEAAEAABAIAoAAAoAQ=</HashCode>
+      <FileName>Models\shop_appContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="shopApp_BackEnd.Models.User">
+    <Position X="9" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAIAAEAAAAAgAAAAAAAACAAAQAAAAAAA=</HashCode>
+      <FileName>Models\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="shopApp_BackEnd.Controllers.AdressesController">
+    <Position X="18.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACBAAAEAAABAAAAAAAAAAAAAAAAAAAAACAAAAgAAI=</HashCode>
+      <FileName>Controllers\AdressesController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_context" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="shopApp_BackEnd.Controllers.ApplicationUserController">
+    <Position X="12.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAABgABAAAAABAAgAAAAAAAAAAAAAQABAAAEA=</HashCode>
+      <FileName>Controllers\ApplicationUserController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_context" />
+      <Field Name="_userManager" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="shopApp_BackEnd.Controllers.BankAccountsController">
+    <Position X="18.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAgAAAABAAAAAAAAAAIAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Controllers\BankAccountsController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_context" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="shopApp_BackEnd.Controllers.ColorListsController">
+    <Position X="20.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIEAAAAABAgAAAAAAAAAAABAAAAEAAAAAAAAAAE=</HashCode>
+      <FileName>Controllers\ColorListsController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_context" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="shopApp_BackEnd.Controllers.ColorsController">
+    <Position X="22" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAABAAAAAAAAEAAAAAAAACAAIAAAAAAAAA=</HashCode>
+      <FileName>Controllers\ColorsController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_context" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="shopApp_BackEnd.Controllers.CommentsController">
+    <Position X="16.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAQAAABAAABAAAAAAAAAAAQAAAAAAAAEgCAAAAAAA=</HashCode>
+      <FileName>Controllers\CommentsController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_context" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="shopApp_BackEnd.Controllers.CustomerCartsController">
+    <Position X="22" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAQAAAIAAJAAgAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Controllers\CustomerCartsController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_context" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="shopApp_BackEnd.Controllers.CustomersController">
+    <Position X="16.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAABAAAAABAAAAAAACAAAAAAAADAAA=</HashCode>
+      <FileName>Controllers\CustomersController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_context" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="shopApp_BackEnd.Controllers.ManufacturersController">
+    <Position X="20.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAABAAAAAAAAAAAAAcAAAAAAAAABAAIAAA=</HashCode>
+      <FileName>Controllers\ManufacturersController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_context" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="shopApp_BackEnd.Controllers.OpeningHoursController">
+    <Position X="22" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAABAAABQAAAEAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\OpeningHoursController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_context" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="shopApp_BackEnd.Controllers.OrderListsController">
+    <Position X="16.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAABAAAAAAAAAAAAAIIAAAAFAQAA=</HashCode>
+      <FileName>Controllers\OrderListsController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_context" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="shopApp_BackEnd.Controllers.OrdersController">
+    <Position X="20.25" Y="8.25" Width="1.5" />
+    <AssociationLine Name="_context" Type="shopApp_BackEnd.Models.shop_appContext" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="20.938" Y="8.25" />
+        <Point X="20.938" Y="8.188" />
+        <Point X="20" Y="8.188" />
+        <Point X="20" Y="2.889" />
+        <Point X="14.844" Y="2.889" />
+        <Point X="14.844" Y="3.425" />
+        <Point X="14.75" Y="3.425" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAACQQAAAAABAAAAAAAAAAAAAAAAAIAAEAAAAAAAAA=</HashCode>
+      <FileName>Controllers\OrdersController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_context" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="shopApp_BackEnd.Controllers.ProductListsController">
+    <Position X="18.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAACBAAAAAAAAAAAAAAAAAAEAAACAAAQAAA=</HashCode>
+      <FileName>Controllers\ProductListsController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_context" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="shopApp_BackEnd.Controllers.ProductsController">
+    <Position X="20.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAACAABAAAAAAAAAgAAAAAAAAAQAAACAAAAIA=</HashCode>
+      <FileName>Controllers\ProductsController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_context" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="shopApp_BackEnd.Controllers.ShopsController">
+    <Position X="22" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACCAAABAAgAAAEAAAAAAAAAAABAAAAAAAAAAg=</HashCode>
+      <FileName>Controllers\ShopsController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_context" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="shopApp_BackEnd.Controllers.UserProfileController">
+    <Position X="14.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\UserProfileController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_userManager" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="shopApp_BackEnd.Controllers.UsersController">
+    <Position X="18.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IgAAAAAAAAAABQAEAAAAAAAAAAAAAAAAMAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\UsersController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_context" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Microsoft.AspNetCore.Identity.UserManager&lt;TUser&gt;">
+    <Position X="16" Y="8.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoi UI" Size="9" />
+</ClassDiagram>

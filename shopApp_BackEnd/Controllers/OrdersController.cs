@@ -24,14 +24,14 @@ namespace shopApp_BackEnd.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Order>>> GetOrders()
         {
-            return await _context.Orders.ToListAsync();
+            return await _context.Orders.Include(x=>x.OrderLists).ToListAsync();
         }
 
         // GET: api/Orders/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Order>> GetOrder(string id)
         {
-            var order = await _context.Orders.FindAsync(id);
+            var order = await _context.Orders.Include(x => x.OrderLists).FirstOrDefaultAsync(o=> o.OrderId == id);
 
             if (order == null)
             {

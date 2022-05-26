@@ -98,7 +98,7 @@ namespace shopApp_BackEnd.Controllers
         }
 
         // DELETE: api/CustomerCarts/5
-        [HttpDelete("{u_id,p_id}")]
+        [HttpDelete]
         public async Task<IActionResult> DeleteCustomerCart(string u_id, string p_id)
         {
             var customerCart = await _context.CustomerCarts.FindAsync(u_id, p_id);

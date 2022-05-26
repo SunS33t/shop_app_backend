@@ -24,14 +24,14 @@ namespace shopApp_BackEnd.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Customer>>> GetCustomers()
         {
-            return await _context.Customers.Include(x=>x.CustomerCarts).ToListAsync();
+            return await _context.Customers.Include(x=>x.CustomerCarts).Include(x => x.Orders).ToListAsync();
         }
 
         // GET: api/Customers/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Customer>> GetCustomer(string id)
         {
-            var customer = await _context.Customers.Include(x=>x.CustomerCarts).FirstOrDefaultAsync(x=> x.UserId == id);
+            var customer = await _context.Customers.Include(x=>x.CustomerCarts).Include(x=>x.Orders).FirstOrDefaultAsync(x=> x.UserId == id);
 
             if (customer == null)
             {

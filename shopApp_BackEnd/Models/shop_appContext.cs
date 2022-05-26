@@ -386,16 +386,16 @@ namespace shopApp_BackEnd.Models
                 entity.ToTable("ProductList");
 
                 entity.Property(e => e.ShopId)
-                    .HasMaxLength(20)
+                    .HasMaxLength(50)
                     .IsUnicode(false)
                     .HasColumnName("Shop_ID");
 
                 entity.Property(e => e.ProductId)
-                    .HasMaxLength(20)
+                    .HasMaxLength(50)
                     .IsUnicode(false)
                     .HasColumnName("Product_ID");
 
-                entity.Property(e => e.DeliveryDate).HasColumnType("datetime");
+                entity.Property(e => e.DeliveryDate).HasColumnType("date");
 
                 entity.HasOne(d => d.Product)
                     .WithMany(p => p.ProductLists)

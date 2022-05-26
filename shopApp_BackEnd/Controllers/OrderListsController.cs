@@ -27,6 +27,12 @@ namespace shopApp_BackEnd.Controllers
             return await _context.OrderLists.ToListAsync();
         }
 
+        [HttpGet("{o_id}")]
+        public async Task<ActionResult<IEnumerable<OrderList>>> GetOrderLists(string o_id)
+        {
+            return await _context.OrderLists.Include(x=>x.Product).Where(x=>x.OrderId == o_id).ToListAsync();
+        }
+        /*
         // GET: api/OrderLists/5
         [HttpGet("{id}")]
         public async Task<ActionResult<OrderList>> GetOrderList(string id)
@@ -40,7 +46,7 @@ namespace shopApp_BackEnd.Controllers
 
             return orderList;
         }
-
+        */
         // PUT: api/OrderLists/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
