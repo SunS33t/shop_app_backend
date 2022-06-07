@@ -101,13 +101,13 @@ namespace shopApp_BackEnd.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProductList(string id)
         {
-            var productList = await _context.ProductLists.FindAsync(id);
+            var productList = await _context.ProductLists.Where(x=> x.ShopId == id).ToListAsync();
             if (productList == null)
             {
                 return NotFound();
             }
 
-            _context.ProductLists.Remove(productList);
+            productList.ForEach(x => _context.ProductLists.Remove(x));
             await _context.SaveChangesAsync();
 
             return NoContent();

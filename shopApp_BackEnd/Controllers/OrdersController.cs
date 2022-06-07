@@ -31,7 +31,7 @@ namespace shopApp_BackEnd.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Order>> GetOrder(string id)
         {
-            var order = await _context.Orders.Include(x => x.OrderLists).FirstOrDefaultAsync(o=> o.OrderId == id);
+            var order = await _context.Orders.Include(x => x.OrderLists).Include(x=>x.Adress).FirstOrDefaultAsync(o=> o.OrderId == id);
 
             if (order == null)
             {
